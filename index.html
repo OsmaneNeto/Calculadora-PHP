@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora PHP</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+       
+ 
+
+ <!-- Entradas -->
+
+  <input type="text" name="num1"  /><br>
+  <input type="text" name="num2"  /><br>
+  <input type="text" name="resposta"  value='<? echo $r; ?>' /><br>
+  <input type="text" name="memoria"  value='<? echo $memor; ?>' /><br>
+
+     <!-- Botões -->
+    
+    <!-- Btn operações -->
+    <input type="button" name="operacao" value="+"> 
+    <input type="button" name="operacao" value="-">  
+    <input type="button" name="operacao" value="*"> 
+    <input type="button" name="operacao" value="/"><br>
+
+    <!-- Btn funções -->
+    <input type="button" name="funcao" value="MC">
+    <input type="button" name="funcao" value="MR">
+    <input type="button" name="funcao" value="M+">
+    <input type="button" name="funcao" value="M-">
+
+    <!-- Btn enviar -->
+    <input type="submit" value="Calcular!">
+       
+    </form>
+</body>
+</html>
