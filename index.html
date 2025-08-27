@@ -6,30 +6,30 @@
     <title>Calculadora PHP</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="back.php" method="post">
        
  
 
  <!-- Entradas -->
 
-  <input type="text" name="num1"  /><br>
-  <input type="text" name="num2"  /><br>
-  <input type="text" name="resposta"  value='<? echo $r; ?>' /><br>
-  <input type="text" name="memoria"  value='<? echo $memor; ?>' /><br>
+  <input type="text" name="num1"  value="<?php echo $entrada1; ?>" placeholder="Número 1"/><br>
+  <input type="text" name="num2"  value="<?php echo $entrada2; ?>" placeholder="Número 2"/><br>
+  <input type="text" name="resposta"  value="<?php echo $r; ?>" placeholder="Resposta" readonly>/><br>
+  <input type="text" name="memoria"  value="<?php echo $memor; ?>" placeholder="Memória" readonly /><br>
 
      <!-- Botões -->
     
     <!-- Btn operações -->
-    <input type="button" name="operacao" value="+"> 
-    <input type="button" name="operacao" value="-">  
-    <input type="button" name="operacao" value="*"> 
-    <input type="button" name="operacao" value="/"><br>
+    <input type="submit" name="operacao" value="+"> 
+    <input type="submit" name="operacao" value="-">  
+    <input type="submit" name="operacao" value="*"> 
+    <input type="submit" name="operacao" value="/"><br>
 
     <!-- Btn funções -->
-    <input type="button" name="funcao" value="MC">
-    <input type="button" name="funcao" value="MR">
-    <input type="button" name="funcao" value="M+">
-    <input type="button" name="funcao" value="M-">
+    <input type="submit" name="funcao" value="MC">	<!-- Limpa o conteúdo da memória -->
+    <input type="submit" name="funcao" value="MR">	<!-- Recupera o valor armazenado na memória -->
+    <input type="submit" name="funcao" value="M+">	<!-- Adiciona o número atual à memória -->
+    <input type="submit" name="funcao" value="M-">   <!-- Subtrai o número atual da memória -->
 
     <!-- Btn enviar -->
     <input type="submit" value="Calcular!">

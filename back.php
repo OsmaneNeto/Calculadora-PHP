@@ -1,40 +1,33 @@
 <?php
 
 //Entradas
-  $entrada1 = $_POST['num1'];
-  $entrada2 = $_POST['num2'];
-  $op = $_POST['operacao'];
-  $r = $_POST['resposta'];
-  $func = $_POST['funcao'];
-  $memor = $_POST['memoria'];
+  $entrada1 = $_POST['num1'] ?? '';
+  $entrada2 = $_POST['num2']?? '';
+
+  $memor = $_POST['memoria']?? 0 ;
+  $r = $_POST['resposta']?? '';
+
+  $op = $_POST['operacao']?? '';
+  $func = $_POST['funcao']?? '';
+
 
 //Processamento
-  if($op) {
-      if($op == '+')
-        $r = $a + $b;
-      else if($op == '-')
-        $r = $a - $b;
-      else if($op == '*')
-        $r = $a*$b;
-      else
-        $r = $a/$b;        
-    }
+     switch ($op) {
+    case '+': $r = $entrada1 + $entrada2; break;
+    case '-': $r = $entrada1 - $entrada2; break;
+    case '*': $r = $entrada1 * $entrada2; break;
+    case '/': 
+      $r = ($entrada2 == 0) ? 'Erro: divisão por zero' : $entrada1 / $entrada2;
+      break;
+  }
    
-    if($func) {
-
-    if($func == 'MC')
-    $memor = 0;
-
-    else if($func == 'MR')
-    $a = $a;
-    $memor = $a;
-
-    else if($func == 'M+')
-    $r = $a + $b;
-    $memor = $r;
-
-    else
-        $r = $b - $a;
-        $memor = $r;
+// Processa função de memória
+if ($func) {
+  switch ($func) {
+    case 'MC': $memor = 0; break;
+    case 'MR': $entrada1 = $memor; break;
+    case 'M+': $r = $entrada1 + $entrada2; $memor = $r; break;
+    case 'M-': $r = $entrada1 - $entrada2; $memor = $r; break;
+  }
 }    
 ?>
